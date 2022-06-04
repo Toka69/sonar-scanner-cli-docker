@@ -1,7 +1,11 @@
-FROM alpine:3.14
+FROM php:8.1-alpine3.14
+
+#PHP extensions
+COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
+RUN install-php-extensions xdebug @composer
 
 ARG SONAR_SCANNER_HOME=/opt/sonar-scanner
-ARG SONAR_SCANNER_VERSION
+ARG SONAR_SCANNER_VERSION=4.7.0.2747
 ARG UID=1000
 ARG GID=1000
 ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk \

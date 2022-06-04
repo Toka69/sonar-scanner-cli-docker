@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/SonarSource/sonar-scanner-cli-docker.svg?branch=master)](https://travis-ci.org/SonarSource/sonar-scanner-cli-docker)
 
-# SonarScanner CLI
+# SonarScanner CLI for PHPunit
 
 This is the Git repository that contains source for [SonarScanner CLI](https://github.com/SonarSource/sonar-scanner-cli) Docker images.
 Images are available on [Docker Hub](https://hub.docker.com/r/sonarsource/sonar-scanner-cli).
