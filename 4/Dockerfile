@@ -1,11 +1,14 @@
-FROM php:8.1-alpine3.14
+FROM php:8.1-alpine3.16
 
 #PHP extensions
 COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr/local/bin/
 RUN install-php-extensions xdebug @composer
 
 RUN apk add nodejs npm; \
-    npm install --global yarn
+    npm install --global yarn; \
+    yarn add sass-loader sass --dev; \
+    yarn add autoprefixer --dev; \
+    yarn add file-loader --dev
 
 ARG SONAR_SCANNER_HOME=/opt/sonar-scanner
 ARG SONAR_SCANNER_VERSION=4.7.0.2747
